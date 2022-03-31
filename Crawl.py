@@ -9,6 +9,7 @@ url = 'https://www.dienmayxanh.com/kinh-nghiem-hay/honor-ra-mat-san-pham-moi-vao
 def crawNewsdata(url):
     page = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     soup = BeautifulSoup(page.text, 'html.parser')
+    # craw title
     title = soup.find('div',class_='bcenter').find('h1').text
     # craw header
     header = []
